@@ -150,4 +150,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Built with ❤️ by Harigovind Valsakumar**
 
-*Last updated: December 2024*
+*Last updated: August 2025*
