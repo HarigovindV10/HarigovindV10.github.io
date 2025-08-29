@@ -4,10 +4,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <meta name="description" content="Harigovind Valsakumar - Portfolio Website">
+    <meta name="keywords" content="portfolio, web developer, software engineer, Harigovind Valsakumar">
+    <meta name="author" content="Harigovind Valsakumar">
+    <title>Harigovind Valsakumar - Portfolio</title>
 
-    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"-->
-    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"-->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="main.css">
 
     <!--[if lt IE 9]>
@@ -16,10 +25,287 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Harigovind Valsakumar<h1>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="#home">HV</a>
+        </div>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="#home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#skills" class="nav-link">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </div>
+    </nav>
 
-<script src="https://gist.github.com/HarigovindV10/4f372f645254ceec2f4d572fafca69b9.js"></script>
-    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script-->
-    <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script-->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">Hi, I'm <span class="highlight">Harigovind Valsakumar</span></h1>
+          <p class="hero-subtitle">Full-Stack Developer & Software Engineer</p>
+          <p class="hero-description">Experienced Full-Stack developer with 5 years of experience in developing applications using .NET Core, Angular, SQL, and PostgreSQL. Specialized in building predictive models in Python and deploying containerized applications to Kubernetes in Cloud using CI/CD.</p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="profile-placeholder">
+            <i class="fas fa-user-circle"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>I'm a Full-Stack Developer with 5 years of experience at Gadgeon Systems Inc., specializing in healthcare systems, fleet management, and shipping solutions. I have expertise in modern web technologies and cloud deployment, with a strong focus on performance optimization and system architecture.</p>
+            <p>My experience includes working with microservice architecture, implementing CI/CD pipelines, and integrating various third-party APIs. I'm passionate about learning new technologies and solving complex technical challenges.</p>
+            <div class="about-stats">
+              <div class="stat">
+                <h3>5+</h3>
+                <p>Years Experience</p>
+              </div>
+              <div class="stat">
+                <h3>10+</h3>
+                <p>Projects Completed</p>
+              </div>
+              <div class="stat">
+                <h3>8+</h3>
+                <p>Technologies Mastered</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Frontend & Backend</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fab fa-angular"></i>
+                <span>Angular</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-html5"></i>
+                <span>HTML5/CSS3</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-js"></i>
+                <span>JavaScript</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-code"></i>
+                <span>C#</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Backend & Database</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fab fa-microsoft"></i>
+                <span>.NET Core</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-python"></i>
+                <span>Python</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <span>PostgreSQL</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <span>SQL</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3>Cloud & DevOps</h3>
+            <div class="skill-items">
+              <div class="skill-item">
+                <i class="fab fa-aws"></i>
+                <span>AWS</span>
+              </div>
+              <div class="skill-item">
+                <i class="fab fa-docker"></i>
+                <span>Docker</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-cube"></i>
+                <span>Kubernetes</span>
+              </div>
+              <div class="skill-item">
+                <i class="fas fa-code-branch"></i>
+                <span>CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-hospital"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Healthcare Inventory & Shipping System</h3>
+              <p>Developed a comprehensive healthcare inventory and shipping system using Angular for the frontend. Implemented real-time inventory tracking and integrated shipping APIs from various providers like FedEx and UPS.</p>
+              <div class="project-tech">
+                <span>Angular</span>
+                <span>.NET Core</span>
+                <span>PostgreSQL</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-small">View Details</a>
+                <a href="#" class="btn btn-small btn-outline">Case Study</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-truck"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Fleet Management System</h3>
+              <p>Enhanced a Fleet Management system by integrating new GPS devices and creating APIs using .NET Core. Deployed the system to Kubernetes with improved performance and scalability.</p>
+              <div class="project-tech">
+                <span>.NET Core</span>
+                <span>Kubernetes</span>
+                <span>CI/CD</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-small">View Details</a>
+                <a href="#" class="btn btn-small btn-outline">Case Study</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <i class="fas fa-brain"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Fraud Detection Model</h3>
+              <p>Developed a Python-based fraud detection model using AWS SageMaker. Created a complete pipeline with AWS Lambda and API Gateway for real-time fraud detection in financial transactions.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>AWS SageMaker</span>
+                <span>Lambda</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="btn btn-small">View Details</a>
+                <a href="#" class="btn btn-small btn-outline">Case Study</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <h3>Let's work together!</h3>
+            <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out if you'd like to collaborate or just want to say hello.</p>
+            <div class="contact-methods">
+              <div class="contact-method">
+                <i class="fas fa-envelope"></i>
+                <span>Available upon request</span>
+              </div>
+              <div class="contact-method">
+                <i class="fas fa-phone"></i>
+                <span>Available upon request</span>
+              </div>
+              <div class="contact-method">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Available upon request</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <form>
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/harigovindvalsakumar" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          </div>
+          <p>&copy; 2024 Harigovind Valsakumar. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js"></script>
   </body>
 </html>
