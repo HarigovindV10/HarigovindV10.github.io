@@ -27,18 +27,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// Initialize EmailJS
+(function() {
+  emailjs.init("ilpQOoNS3D9_1TSDq"); // You'll need to replace this with your actual EmailJS public key
+})();
+
 // Form submission handling
-const contactForm = document.querySelector('.contact-form form');
+const contactForm = document.getElementById('contactForm');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
     // Get form data
-    const formData = new FormData(this);
-    const name = this.querySelector('input[type="text"]').value;
-    const email = this.querySelector('input[type="email"]').value;
-    const subject = this.querySelector('input[placeholder="Subject"]').value;
-    const message = this.querySelector('textarea').value;
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
     
     // Basic validation
     if (!name || !email || !subject || !message) {
@@ -53,20 +57,46 @@ if (contactForm) {
       return;
     }
     
-    // Simulate form submission (replace with actual form handling)
+    // Update button state
     const submitBtn = this.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
     
-    // Simulate API call delay
-    setTimeout(() => {
-      alert('Thank you for your message! I\'ll get back to you soon.');
-      this.reset();
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }, 2000);
+    // Prepare template parameters
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      subject: subject,
+      message: message,
+      to_email: 'contact@harigovindvalsakumar.com'
+    };
+    
+    // Send email using EmailJS
+    emailjs.send('service_6wtv3kr', 'template_t8cd9lj', templateParams)
+      .then(function(response) {
+        console.log('SUCCESS!', response.status, response.text);
+        
+        // Show success message
+        alert('Thank you for your message! I\'ll get back to you soon.');
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, function(error) {
+        console.log('FAILED...', error);
+        
+        // Show error message
+        alert('Sorry, there was an error sending your message. Please try again or email me directly at contact@harigovindvalsakumar.com');
+        
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      });
   });
 }
 

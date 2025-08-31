@@ -210,18 +210,31 @@ body {
   align-items: center;
 }
 
-.profile-placeholder {
+.profile-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-photo {
   width: 300px;
   height: 300px;
-  background: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8rem;
-  color: rgba(255, 255, 255, 0.3);
+  object-fit: cover;
+  object-position: center center;
   border: 4px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Safari-specific fixes */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
+
+  .profile-photo:hover {
+    -webkit-transform: scale(1.05) translateZ(0);
+    transform: scale(1.05) translateZ(0);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
 
 /* Section Styles */
 section {
@@ -472,6 +485,17 @@ section {
   width: 20px;
 }
 
+.contact-link {
+  color: #6b7280;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
 .contact-form {
   background: white;
   padding: 2rem;
@@ -577,6 +601,11 @@ section {
     justify-content: center;
   }
   
+  .profile-photo {
+    width: 250px;
+    height: 250px;
+  }
+  
   .about-stats {
     grid-template-columns: 1fr;
   }
@@ -617,6 +646,11 @@ section {
     width: 100%;
     max-width: 250px;
     text-align: center;
+  }
+  
+  .profile-photo {
+    width: 200px;
+    height: 200px;
   }
 }
 

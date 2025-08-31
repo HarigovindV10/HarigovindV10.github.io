@@ -17,6 +17,9 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- EmailJS for automatic email sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <link rel="stylesheet" href="main.css">
 
     <!--[if lt IE 9]>
@@ -62,15 +65,15 @@
         <div class="hero-content">
           <h1 class="hero-title">Hi, I'm <span class="highlight">Harigovind Valsakumar</span></h1>
           <p class="hero-subtitle">Full-Stack Developer & Software Engineer</p>
-          <p class="hero-description">Experienced Full-Stack developer with 5 years of experience in developing applications using .NET Core, Angular, SQL, and PostgreSQL. Specialized in building predictive models in Python and deploying containerized applications to Kubernetes in Cloud using CI/CD.</p>
+          <p class="hero-description">Experienced Full-Stack developer with 6 years of experience in developing applications using .NET Core, Angular, SQL, and PostgreSQL. Specialized in building predictive models in Python and deploying containerized applications to Kubernetes in Cloud using CI/CD.</p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
             <a href="#contact" class="btn btn-secondary">Get In Touch</a>
           </div>
         </div>
         <div class="hero-image">
-          <div class="profile-placeholder">
-            <i class="fas fa-user-circle"></i>
+          <div class="profile-image">
+            <img src="IMG_2055.JPG" alt="Harigovind Valsakumar - Full-Stack Developer" class="profile-photo">
           </div>
         </div>
       </div>
@@ -82,11 +85,11 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
           <div class="about-text">
-            <p>I'm a Full-Stack Developer with 5 years of experience at Gadgeon Systems Inc., specializing in healthcare systems, fleet management, and shipping solutions. I have expertise in modern web technologies and cloud deployment, with a strong focus on performance optimization and system architecture.</p>
+            <p>I'm a Full-Stack Developer with 6 years of experience at Gadgeon Systems Inc., specializing in healthcare systems, fleet management, and shipping solutions. I have expertise in modern web technologies and cloud deployment, with a strong focus on performance optimization and system architecture.</p>
             <p>My experience includes working with microservice architecture, implementing CI/CD pipelines, and integrating various third-party APIs. I'm passionate about learning new technologies and solving complex technical challenges.</p>
             <div class="about-stats">
               <div class="stat">
-                <h3>5+</h3>
+                <h3>6+</h3>
                 <p>Years Experience</p>
               </div>
               <div class="stat">
@@ -257,31 +260,23 @@
             <div class="contact-methods">
               <div class="contact-method">
                 <i class="fas fa-envelope"></i>
-                <span>Available upon request</span>
-              </div>
-              <div class="contact-method">
-                <i class="fas fa-phone"></i>
-                <span>Available upon request</span>
-              </div>
-              <div class="contact-method">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Available upon request</span>
+                <a href="mailto:contact@harigovindvalsakumar.com" class="contact-link">contact@harigovindvalsakumar.com</a>
               </div>
             </div>
           </div>
           <div class="contact-form">
-            <form>
+            <form id="contactForm">
               <div class="form-group">
-                <input type="text" placeholder="Your Name" required>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
               </div>
               <div class="form-group">
-                <input type="email" placeholder="Your Email" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Subject" required>
+                <input type="text" id="subject" name="subject" placeholder="Subject" required>
               </div>
               <div class="form-group">
-                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
               </div>
               <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
@@ -294,13 +289,13 @@
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
-          <div class="footer-social">
-            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/harigovindvalsakumar" class="social-link"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-          </div>
-          <p>&copy; 2024 Harigovind Valsakumar. All rights reserved.</p>
+                      <div class="footer-social">
+              <a href="https://github.com/harigovindv10" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+              <a href="https://linkedin.com/in/harigovindvalsakumar" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+              <a href="https://x.com/hvalsakumar" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+              <a href="https://www.instagram.com/harigovindvalsakumar/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+          <p>&copy; 2025 Harigovind Valsakumar. All rights reserved.</p>
         </div>
       </div>
     </footer>
