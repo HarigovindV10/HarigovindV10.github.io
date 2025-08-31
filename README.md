@@ -144,10 +144,10 @@ This project is open source and available under the [MIT License](LICENSE).
 - Font Awesome for the icons
 - Google Fonts for typography
 - Modern CSS techniques and best practices
-- The open-source community for inspiration
+- The open-source community for inspirations
 
 ---
 
 **Built with ❤️ by Harigovind Valsakumar**
 
-*Last updated: December 2024*
+*Last updated: August 2025*
