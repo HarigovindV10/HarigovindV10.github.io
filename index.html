@@ -93,7 +93,7 @@
                 <p>Years Experience</p>
               </div>
               <div class="stat">
-                <h3>10+</h3>
+                <h3>15+</h3>
                 <p>Projects Completed</p>
               </div>
               <div class="stat">
@@ -182,69 +182,240 @@
     <section id="projects" class="projects">
       <div class="container">
         <h2 class="section-title">Featured Projects</h2>
+        <p class="projects-subtitle">A selection of professional, personal, and research projects across web, ML, and tooling.</p>
         <div class="projects-grid">
-          <div class="project-card">
+
+          <!-- Web / Enterprise -->
+          <div class="project-card" data-category="web">
             <div class="project-image">
+              <span class="project-badge">Web</span>
               <div class="project-placeholder">
                 <i class="fas fa-hospital"></i>
               </div>
             </div>
             <div class="project-content">
               <h3>Healthcare Inventory & Shipping System</h3>
-              <p>Developed a comprehensive healthcare inventory and shipping system using Angular for the frontend. Implemented real-time inventory tracking and integrated shipping APIs from various providers like FedEx and UPS.</p>
+              <p>A multi-module web application built on Angular and .NET Core, backed by PostgreSQL. Handles real-time data synchronisation across distributed services, with third-party API integrations for logistics providers via RESTful endpoints.</p>
               <div class="project-tech">
                 <span>Angular</span>
                 <span>.NET Core</span>
                 <span>PostgreSQL</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="btn btn-small">View Details</a>
-                <a href="#" class="btn btn-small btn-outline">Case Study</a>
+                <span>REST APIs</span>
               </div>
             </div>
           </div>
-          
-          <div class="project-card">
+
+          <div class="project-card" data-category="web">
             <div class="project-image">
+              <span class="project-badge">Web</span>
               <div class="project-placeholder">
                 <i class="fas fa-truck"></i>
               </div>
             </div>
             <div class="project-content">
               <h3>Fleet Management System</h3>
-              <p>Enhanced a Fleet Management system by integrating new GPS devices and creating APIs using .NET Core. Deployed the system to Kubernetes with improved performance and scalability.</p>
+              <p>Extended a microservices-based platform to support new IoT device protocols and GPS telemetry ingestion. Built .NET Core APIs deployed on Kubernetes with Helm, optimised via CI/CD pipelines for zero-downtime rollouts.</p>
               <div class="project-tech">
                 <span>.NET Core</span>
                 <span>Kubernetes</span>
+                <span>PostgreSQL</span>
                 <span>CI/CD</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="btn btn-small">View Details</a>
-                <a href="#" class="btn btn-small btn-outline">Case Study</a>
               </div>
             </div>
           </div>
-          
-          <div class="project-card">
+
+          <div class="project-card" data-category="web">
             <div class="project-image">
+              <span class="project-badge">Web</span>
+              <div class="project-placeholder">
+                <i class="fas fa-diagram-project"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Workflow Automation Platform</h3>
+              <p>A full-stack workflow orchestration platform built with React and Java Spring Boot. Uses Flowable as the BPMN process engine, PostgreSQL for persistence, and Keycloak for OAuth2/OIDC identity and access management.</p>
+              <div class="project-tech">
+                <span>React</span>
+                <span>Java</span>
+                <span>Spring Boot</span>
+                <span>Flowable</span>
+                <span>PostgreSQL</span>
+                <span>Keycloak</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ML / AI -->
+          <div class="project-card" data-category="ml-ai">
+            <div class="project-image">
+              <span class="project-badge">ML / AI</span>
               <div class="project-placeholder">
                 <i class="fas fa-brain"></i>
               </div>
             </div>
             <div class="project-content">
               <h3>Fraud Detection Model</h3>
-              <p>Developed a Python-based fraud detection model using AWS SageMaker. Created a complete pipeline with AWS Lambda and API Gateway for real-time fraud detection in financial transactions.</p>
+              <p>End-to-end ML pipeline built on AWS SageMaker for real-time anomaly scoring. Orchestrated inference via AWS Lambda and API Gateway; trained models on structured tabular data using scikit-learn and XGBoost.</p>
               <div class="project-tech">
                 <span>Python</span>
                 <span>AWS SageMaker</span>
                 <span>Lambda</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="btn btn-small">View Details</a>
-                <a href="#" class="btn btn-small btn-outline">Case Study</a>
+                <span>scikit-learn</span>
+                <span>XGBoost</span>
               </div>
             </div>
           </div>
+
+          <div class="project-card" data-category="ml-ai">
+            <div class="project-image">
+              <span class="project-badge">ML / AI</span>
+              <div class="project-placeholder">
+                <i class="fas fa-mask"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Superhero Character Predictor</h3>
+              <p>A convolutional neural network trained to classify images into character identities. Built with Python and Keras using transfer learning on a custom-labelled dataset, with image augmentation applied for generalisation.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Keras</span>
+                <span>CNN</span>
+                <span>Transfer Learning</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/HarigovindV10/SuperheroCharacterPredictor" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="ml-ai">
+            <div class="project-image">
+              <span class="project-badge">ML / AI</span>
+              <div class="project-placeholder">
+                <i class="fas fa-credit-card"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Credit Card Fraud Detection</h3>
+              <p>A binary classification pipeline using scikit-learn to detect anomalous transactions in highly imbalanced tabular datasets. Applied SMOTE for class balancing and evaluated models using precision-recall AUC.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>scikit-learn</span>
+                <span>SMOTE</span>
+                <span>Jupyter</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/HarigovindV10/Credit-Card-Fraud-Detection" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="ml-ai">
+            <div class="project-image">
+              <span class="project-badge">ML / AI</span>
+              <div class="project-placeholder">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Linear Regression from Scratch</h3>
+              <p>A ground-up implementation of linear regression using NumPy — gradient descent, cost function minimisation, and model evaluation — without any ML framework abstractions.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>NumPy</span>
+                <span>Matplotlib</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/HarigovindV10/LinearRegression" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="ml-ai">
+            <div class="project-image">
+              <span class="project-badge">ML / AI</span>
+              <div class="project-placeholder">
+                <i class="fas fa-circle-nodes"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Clustering Algorithms</h3>
+              <p>Implementations of major unsupervised clustering algorithms — K-Means, DBSCAN, and Agglomerative — benchmarked across synthetic and real datasets with visualised cluster boundaries.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>scikit-learn</span>
+                <span>Matplotlib</span>
+                <span>Jupyter</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/HarigovindV10/Clustering" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="ml-ai">
+            <div class="project-image">
+              <span class="project-badge">ML / AI</span>
+              <div class="project-placeholder">
+                <i class="fas fa-sitemap"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Algorithms Library</h3>
+              <p>A reference collection of classic computer science algorithms implemented in Python — sorting, graph traversal, dynamic programming, and search — each with time and space complexity annotations.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Data Structures</span>
+                <span>Algorithms</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/HarigovindV10/Algorithms" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="project-card" data-category="tool">
+            <div class="project-image">
+              <span class="project-badge">Tool</span>
+              <div class="project-placeholder">
+                <i class="fas fa-wifi"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>JioFi Status Checker</h3>
+              <p>A native macOS menu bar application built in Swift that polls a local network device's status API, surfacing battery and signal metrics directly in the system tray without opening a browser.</p>
+              <div class="project-tech">
+                <span>Swift</span>
+                <span>macOS</span>
+                <span>URLSession</span>
+                <span>MenuBar</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/HarigovindV10/JioFiStatusChecker" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-category="tool">
+            <div class="project-image">
+              <span class="project-badge">Tool</span>
+              <div class="project-placeholder">
+                <i class="fas fa-bookmark"></i>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Reddit Saved Items Organiser</h3>
+              <p>A Python CLI tool that authenticates with the Reddit OAuth2 API via PRAW to fetch, filter, and export a user's saved posts and comments into structured formats for offline archiving.</p>
+              <div class="project-tech">
+                <span>Python</span>
+                <span>PRAW</span>
+                <span>OAuth2</span>
+                <span>REST</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
