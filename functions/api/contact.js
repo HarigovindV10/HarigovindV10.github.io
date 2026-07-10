@@ -63,6 +63,9 @@ export async function onRequestPost(context) {
     body: JSON.stringify({
       from: FROM_ADDRESS,
       to: [TO_ADDRESS],
+      // Set Reply-To here at the API level — the template's {{{reply_to_email}}}
+      // metadata field doesn't resolve to a valid address on its own; this wins.
+      reply_to: email,
       template: {
         id: TEMPLATE_ID,
         variables: {
