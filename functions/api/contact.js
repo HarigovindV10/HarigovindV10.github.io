@@ -10,6 +10,8 @@
 
 const TO_ADDRESS = "contact@harigovindvalsakumar.com";
 const FROM_ADDRESS = "Portfolio Contact <contact@harigovindvalsakumar.com>";
+// Resend saved template (alias) — must be Published in the Resend dashboard.
+const TEMPLATE_ID = "contact-form-submission";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -18,12 +20,6 @@ function json(body, status = 200) {
     status,
     headers: { "content-type": "application/json" },
   });
-}
-
-function escapeHtml(s) {
-  return String(s).replace(/[&<>"']/g, (c) =>
-    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
-  );
 }
 
 export async function onRequestPost(context) {
@@ -56,20 +52,8 @@ export async function onRequestPost(context) {
     return json({ error: "Email service is not configured." }, 500);
   }
 
-  const text =
-    `New message from your portfolio contact form:\n\n` +
-    `Name:    ${name}\n` +
-    `Email:   ${email}\n` +
-    `Subject: ${subject}\n\n` +
-    `${message}\n`;
-
-  const html =
-    `<h2>New portfolio contact message</h2>` +
-    `<p><strong>Name:</strong> ${escapeHtml(name)}<br>` +
-    `<strong>Email:</strong> ${escapeHtml(email)}<br>` +
-    `<strong>Subject:</strong> ${escapeHtml(subject)}</p>` +
-    `<p style="white-space:pre-wrap">${escapeHtml(message)}</p>`;
-
+  // Renders the "contact-form-submission" Resend template. Its Reply-To field
+  // uses {{{reply_to_email}}}, so replying in your inbox goes to the visitor.
   const resp = await fetch("https://api.resend.com/emails", {
     method: "POST",
     headers: {
@@ -79,10 +63,16 @@ export async function onRequestPost(context) {
     body: JSON.stringify({
       from: FROM_ADDRESS,
       to: [TO_ADDRESS],
-      reply_to: email,
-      subject: `[Portfolio] ${subject}`,
-      text,
-      html,
+      template: {
+        id: TEMPLATE_ID,
+        variables: {
+          sender_name: name,
+          sender_email: email,
+          form_subject: subject,
+          form_message: message,
+          reply_to_email: email,
+        },
+      },
     }),
   });
 
