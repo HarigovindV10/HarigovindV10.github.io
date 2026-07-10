@@ -27,76 +27,94 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Initialize EmailJS
-(function() {
-  emailjs.init("ilpQOoNS3D9_1TSDq"); // You'll need to replace this with your actual EmailJS public key
-})();
-
-// Form submission handling
+// Contact form -> Cloudflare Pages Function (/api/contact) -> Resend.
+// Inline validation, no third-party JS. Reply-To is set to the visitor server-side.
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const fields = ['name', 'email', 'subject', 'message'];
+
+  const setError = (id, msg) => {
+    const group = document.getElementById(id).closest('.form-group');
+    const err = document.getElementById(id + 'Error');
+    if (msg) {
+      if (err) err.textContent = msg;
+      group.classList.add('invalid');
+    } else {
+      group.classList.remove('invalid');
+    }
+  };
+
+  const validateField = (id) => {
+    const value = document.getElementById(id).value.trim();
+    if (!value) { setError(id, 'This field is required.'); return false; }
+    if (id === 'email' && !EMAIL_RE.test(value)) {
+      setError(id, 'Please enter a valid email address.');
+      return false;
+    }
+    setError(id, null);
+    return true;
+  };
+
+  // Live feedback as the user leaves or corrects a field.
+  fields.forEach((id) => {
+    const el = document.getElementById(id);
+    el.addEventListener('blur', () => validateField(id));
+    el.addEventListener('input', () => {
+      if (el.closest('.form-group').classList.contains('invalid')) validateField(id);
+    });
+  });
+
+  contactForm.addEventListener('submit', async function (e) {
     e.preventDefault();
-    
-    // Get form data
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const subject = document.getElementById('subject').value.trim();
-    const message = document.getElementById('message').value.trim();
-    
-    // Basic validation
-    if (!name || !email || !subject || !message) {
-      alert('Please fill in all fields');
+    const status = document.getElementById('formStatus');
+    status.className = 'form-status';
+    status.textContent = '';
+
+    const valid = fields.map(validateField).every(Boolean);
+    if (!valid) {
+      const firstInvalid = contactForm.querySelector('.form-group.invalid input, .form-group.invalid textarea');
+      if (firstInvalid) firstInvalid.focus();
       return;
     }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address');
-      return;
-    }
-    
-    // Update button state
+
     const submitBtn = this.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
-    
-    submitBtn.textContent = 'Sending...';
+    submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
-    
-    // Prepare template parameters
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      subject: subject,
-      message: message,
-      to_email: 'contact@harigovindvalsakumar.com'
-    };
-    
-    // Send email using EmailJS
-    emailjs.send('service_6wtv3kr', 'template_t8cd9lj', templateParams)
-      .then(function(response) {
-        console.log('SUCCESS!', response.status, response.text);
-        
-        // Show success message
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }, function(error) {
-        console.log('FAILED...', error);
-        
-        // Show error message
-        alert('Sorry, there was an error sending your message. Please try again or email me directly at contact@harigovindvalsakumar.com');
-        
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          subject: document.getElementById('subject').value.trim(),
+          message: document.getElementById('message').value.trim(),
+          company: document.getElementById('company').value, // honeypot
+        }),
       });
+
+      if (res.ok) {
+        contactForm.reset();
+        status.className = 'form-status success';
+        status.textContent = "Thank you for your message! I'll get back to you soon.";
+      } else {
+        const data = await res.json().catch(() => ({}));
+        if (data.errors) {
+          Object.entries(data.errors).forEach(([id, msg]) => setError(id, msg));
+        }
+        status.className = 'form-status error';
+        status.textContent = data.error || 'Sorry, something went wrong. Please try again or email contact@harigovindvalsakumar.com.';
+      }
+    } catch (err) {
+      status.className = 'form-status error';
+      status.textContent = 'Network error. Please try again or email contact@harigovindvalsakumar.com.';
+    } finally {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
   });
 }
 

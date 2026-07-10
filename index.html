@@ -17,10 +17,17 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- EmailJS for automatic email sending -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    
     <link rel="stylesheet" href="main.css">
+
+    <style>
+      .field-error { display: none; color: #d33; font-size: 0.85rem; margin-top: 6px; }
+      .form-group.invalid .field-error { display: block; }
+      .form-group.invalid input,
+      .form-group.invalid textarea { border-color: #d33; }
+      .form-status { margin-top: 16px; font-weight: 500; }
+      .form-status.success { color: #2a9d3a; }
+      .form-status.error { color: #d33; }
+    </style>
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
@@ -439,20 +446,27 @@
             </div>
           </div>
           <div class="contact-form">
-            <form id="contactForm">
+            <form id="contactForm" novalidate>
               <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="text" id="name" name="name" placeholder="Your Name" maxlength="100" required>
+                <small class="field-error" id="nameError">Please enter your name.</small>
               </div>
               <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" maxlength="254" required>
+                <small class="field-error" id="emailError">Please enter a valid email address.</small>
               </div>
               <div class="form-group">
-                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                <input type="text" id="subject" name="subject" placeholder="Subject" maxlength="200" required>
+                <small class="field-error" id="subjectError">Please enter a subject.</small>
               </div>
               <div class="form-group">
-                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" maxlength="5000" required></textarea>
+                <small class="field-error" id="messageError">Please enter a message.</small>
               </div>
+              <!-- Honeypot: hidden from people, catches bots. Real submissions leave it empty. -->
+              <input type="text" name="company" id="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
               <button type="submit" class="btn btn-primary">Send Message</button>
+              <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
             </form>
           </div>
         </div>
