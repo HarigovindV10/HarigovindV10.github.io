@@ -21,13 +21,13 @@
   <meta name="twitter:card" content="summary">
 
   <link rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0b0a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23f0ece3' text-anchor='middle'%3EHV%3C/text%3E%3Ccircle cx='52' cy='16' r='5' fill='%23b6e04c'/%3E%3C/svg%3E">
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23000000'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23f0ece3' text-anchor='middle'%3EHV%3C/text%3E%3Ccircle cx='52' cy='16' r='5' fill='%23b6e04c'/%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="main.css?v=3">
+  <link rel="stylesheet" href="main.css?v=4">
 </head>
 
 <body>
@@ -373,7 +373,9 @@
           <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
         </form>
 
-        <div class="sent" id="formSent" hidden>
+        <!-- Inline display, not the `hidden` attribute: an inline style beats
+             `.sent { display: flex }` even if a stale stylesheet is cached. -->
+        <div class="sent" id="formSent" style="display: none">
           <div class="tick" aria-hidden="true">✓</div>
           <h3>Message sent</h3>
           <p>I'll get back to you within a day or two.</p>
@@ -387,7 +389,7 @@
     <span>Kochi, India · Built with too much attention to the error path</span>
   </footer>
 
-  <script src="main.js?v=3" defer></script>
+  <script src="main.js?v=4" defer></script>
 </body>
 
 </html>

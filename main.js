@@ -177,8 +177,8 @@
       }).then(function (res) {
         if (res.ok) {
           form.reset();
-          form.hidden = true;
-          if (sent) sent.hidden = false;
+          form.style.display = 'none';
+          if (sent) sent.style.display = 'flex';
           return;
         }
         return res.json().catch(function () { return {}; }).then(function (data) {
