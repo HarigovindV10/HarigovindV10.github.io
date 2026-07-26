@@ -1,494 +1,409 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Harigovind Valsakumar - Portfolio Website">
-    <meta name="keywords" content="portfolio, web developer, software engineer, Harigovind Valsakumar">
-    <meta name="author" content="Harigovind Valsakumar">
-    <title>Harigovind Valsakumar - Portfolio</title>
+<html lang="en" class="no-js">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="main.css?v=2">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Harigovind Valsakumar — Full-Stack Engineer</title>
+  <meta name="description"
+    content="Full-stack and platform engineer, seven years in. .NET Core services, Angular front-ends, PostgreSQL schemas, and the Kubernetes that keeps them running. Based in Kochi, India.">
+  <meta name="keywords"
+    content="Harigovind Valsakumar, full-stack engineer, .NET Core, Angular, Kubernetes, PostgreSQL, portfolio">
+  <meta name="author" content="Harigovind Valsakumar">
+  <link rel="canonical" href="https://harigovindvalsakumar.com/">
 
-    <style>
-      .field-error { display: none; color: #d33; font-size: 0.85rem; margin-top: 6px; }
-      .form-group.invalid .field-error { display: block; }
-      .form-group.invalid input,
-      .form-group.invalid textarea { border-color: #d33; }
-      .form-status { margin-top: 16px; font-weight: 500; }
-      .form-status.success { color: #2a9d3a; }
-      .form-status.error { color: #d33; }
-    </style>
+  <meta property="og:title" content="Harigovind Valsakumar — Full-Stack Engineer">
+  <meta property="og:description"
+    content="Full-stack and platform engineer. .NET Core, Angular, PostgreSQL, Kubernetes — healthcare, fleet telemetry and logistics systems.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://harigovindvalsakumar.com/">
+  <meta name="twitter:card" content="summary">
 
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body spellcheck="false">
-    <!-- Navigation -->
-    <nav class="navbar">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <a href="#home">HV</a>
-        </div>
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#home" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about" class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#skills" class="nav-link">Skills</a>
-          </li>
-          <li class="nav-item">
-            <a href="#projects" class="nav-link">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact</a>
-          </li>
-        </ul>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c0b0a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' fill='%23f0ece3' text-anchor='middle'%3EHV%3C/text%3E%3Ccircle cx='52' cy='16' r='5' fill='%23b6e04c'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="main.css?v=3">
+</head>
+
+<body>
+  <a class="skip" href="#top">Skip to content</a>
+
+  <header class="nav">
+    <nav class="nav-inner" aria-label="Main">
+      <a class="mark" href="#top">HV<span>.</span></a>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-links"
+        aria-label="Menu">
+        <svg class="ico-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18" />
+        </svg>
+        <svg class="ico-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          aria-hidden="true">
+          <path d="M5 5l14 14M19 5L5 19" />
+        </svg>
+      </button>
+
+      <div class="nav-links" id="nav-links" data-nav-links>
+        <a data-nav="about" href="#about">About</a>
+        <a data-nav="work" href="#work">Work</a>
+        <a data-nav="skills" href="#skills">Stack</a>
+        <a class="nav-cta" href="#contact">Get in touch</a>
       </div>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <span class="hero-eyebrow">Available for opportunities</span>
-          <h1 class="hero-title">Hi, I'm <span class="highlight">Harigovind Valsakumar</span></h1>
-          <p class="hero-subtitle">Full-Stack Developer & Software Engineer</p>
-          <p class="hero-description">Experienced Full-Stack developer with 6 years of experience in developing applications using .NET Core, Angular, SQL, and PostgreSQL. Specialized in building predictive models in Python and deploying containerized applications to Kubernetes in Cloud using CI/CD.</p>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+  <main id="top" class="wrap">
+
+    <!-- ── Hero ──────────────────────────────────────────────────── -->
+    <section class="hero">
+      <p class="status"><i aria-hidden="true"></i>Open to new roles · Kochi / remote</p>
+
+      <h1>Harigovind<br><span class="it">Valsakumar</span></h1>
+
+      <div class="hero-grid">
+        <div>
+          <p class="hero-lead">Full-stack engineer, seven years in. I build the unglamorous middle — .NET Core services,
+            Angular front-ends, Postgres schemas — and keep them running on Kubernetes.</p>
+          <p class="hero-sub">Healthcare inventory, fleet telemetry, shipping logistics. Lately: predictive models in
+            Python and the pipelines that ship them.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#work">See the work</a>
+            <a class="btn btn-ghost" href="mailto:contact@harigovindvalsakumar.com">Email me</a>
           </div>
         </div>
-        <div class="hero-image">
-          <div class="profile-image">
-            <img src="IMG_2055.JPG" alt="Harigovind Valsakumar - Full-Stack Developer" class="profile-photo">
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="projects-subtitle">Building reliable systems, one layer at a time.</p>
-        <div class="about-content">
-          <div class="about-text">
-            <p>I'm a Full-Stack Developer with 6 years of experience at Gadgeon Systems Inc., specializing in healthcare systems, fleet management, and shipping solutions. I have expertise in modern web technologies and cloud deployment, with a strong focus on performance optimization and system architecture.</p>
-            <p>My experience includes working with microservice architecture, implementing CI/CD pipelines, and integrating various third-party APIs. I'm passionate about learning new technologies and solving complex technical challenges.</p>
-            <div class="about-stats">
-              <div class="stat">
-                <h3>6+</h3>
-                <p>Years Experience</p>
-              </div>
-              <div class="stat">
-                <h3>15+</h3>
-                <p>Projects Completed</p>
-              </div>
-              <div class="stat">
-                <h3>8+</h3>
-                <p>Technologies Mastered</p>
-              </div>
-            </div>
+        <div class="hero-meta">
+          <dl class="facts">
+            <div><dt>Role</dt><dd>Full-stack / platform engineer</dd></div>
+            <div><dt>Since</dt><dd>2019 · Gadgeon Systems Inc.</dd></div>
+            <div><dt>Core</dt><dd>.NET Core · Angular · PostgreSQL</dd></div>
+            <div><dt>Also</dt><dd>Python · Kubernetes · AWS</dd></div>
+          </dl>
+          <div class="portrait">
+            <img src="portrait.webp" width="400" height="506" alt="Harigovind Valsakumar">
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-      <div class="container">
-        <h2 class="section-title">Skills & Technologies</h2>
-        <p class="projects-subtitle">The tools and platforms I work with day to day.</p>
-        <div class="skills-grid">
-          <div class="skill-category">
-            <h3>Frontend & Backend</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <i class="fab fa-angular"></i>
-                <span>Angular</span>
-              </div>
-              <div class="skill-item">
-                <i class="fab fa-html5"></i>
-                <span>HTML5/CSS3</span>
-              </div>
-              <div class="skill-item">
-                <i class="fab fa-js"></i>
-                <span>JavaScript</span>
-              </div>
-              <div class="skill-item">
-                <i class="fas fa-code"></i>
-                <span>C#</span>
-              </div>
+    <!-- ── Stats ─────────────────────────────────────────────────── -->
+    <section class="stats will-rise" aria-label="At a glance">
+      <div>
+        <b>7<span>+</span></b>
+        <p>Years shipping production software</p>
+      </div>
+      <div>
+        <b>15<span>+</span></b>
+        <p>Projects delivered, client and personal</p>
+      </div>
+      <div>
+        <b>3</b>
+        <p>Domains: healthcare, fleet, logistics</p>
+      </div>
+    </section>
+
+    <!-- ── About ─────────────────────────────────────────────────── -->
+    <section class="sec will-rise" id="about">
+      <p class="tag">01 — About</p>
+      <div>
+        <h2>Reliable systems, <span class="it">one layer at a time.</span></h2>
+
+        <div class="duo">
+          <p>Seven years at Gadgeon Systems Inc. building multi-module platforms for healthcare, fleet and shipping
+            clients — the kind of work where a bad migration is somebody's missing inventory at 2am.</p>
+          <p>Most of that has gone into microservices, third-party integrations and the CI/CD that makes releases
+            boring. I care about the parts nobody demos: query plans, rollout strategy, the error path. Outside work I
+            train models and build small tools.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="row is-now">
+            <div class="when">2023 — Now</div>
+            <div>
+              <h3>Platform, workflow &amp; ML</h3>
+              <p>BPMN workflow orchestration on Spring Boot and Flowable, Keycloak identity, and SageMaker-served
+                anomaly models.</p>
             </div>
           </div>
-          <div class="skill-category">
-            <h3>Backend & Database</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <i class="fab fa-microsoft"></i>
-                <span>.NET Core</span>
-              </div>
-              <div class="skill-item">
-                <i class="fab fa-python"></i>
-                <span>Python</span>
-              </div>
-              <div class="skill-item">
-                <i class="fas fa-database"></i>
-                <span>PostgreSQL</span>
-              </div>
-              <div class="skill-item">
-                <i class="fas fa-database"></i>
-                <span>SQL</span>
-              </div>
+          <div class="row">
+            <div class="when">2021 — 2023</div>
+            <div>
+              <h3>Fleet management &amp; IoT</h3>
+              <p>Extended a microservice platform to new device protocols and GPS telemetry ingestion; Helm-deployed
+                .NET Core APIs with zero-downtime rollouts.</p>
             </div>
           </div>
-          <div class="skill-category">
-            <h3>Cloud & DevOps</h3>
-            <div class="skill-items">
-              <div class="skill-item">
-                <i class="fab fa-aws"></i>
-                <span>AWS</span>
-              </div>
-              <div class="skill-item">
-                <i class="fab fa-docker"></i>
-                <span>Docker</span>
-              </div>
-              <div class="skill-item">
-                <i class="fas fa-cube"></i>
-                <span>Kubernetes</span>
-              </div>
-              <div class="skill-item">
-                <i class="fas fa-code-branch"></i>
-                <span>CI/CD</span>
-              </div>
+          <div class="row">
+            <div class="when">2019 — 2021</div>
+            <div>
+              <h3>Healthcare &amp; shipping systems</h3>
+              <p>Angular and .NET Core inventory and logistics modules on PostgreSQL, synchronising data across
+                distributed services and carrier APIs.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="projects-subtitle">A selection of professional, personal, and research projects across web, ML, and tooling.</p>
-        <div class="projects-grid">
+    <!-- ── Selected work ─────────────────────────────────────────── -->
+    <section class="sec will-rise" id="work" style="padding-bottom:60px">
+      <p class="tag">02 — Selected work</p>
+      <div>
+        <h2 class="tight">Three that mattered.</h2>
+        <p class="work-note">Client work at Gadgeon — details generalised where the contract requires it.</p>
 
-          <!-- Web / Enterprise -->
-          <div class="project-card" data-category="web">
-            <div class="project-image">
-              <span class="project-badge">Web</span>
-              <div class="project-placeholder">
-                <i class="fas fa-hospital"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Healthcare Inventory & Shipping System</h3>
-              <p>A multi-module web application built on Angular and .NET Core, backed by PostgreSQL. Handles real-time data synchronisation across distributed services, with third-party API integrations for logistics providers via RESTful endpoints.</p>
-              <div class="project-tech">
-                <span>Angular</span>
-                <span>.NET Core</span>
-                <span>PostgreSQL</span>
-                <span>REST APIs</span>
-              </div>
-            </div>
+        <article class="proj">
+          <div>
+            <p class="kicker"><b>01</b><span>Healthcare</span></p>
+            <h3>Healthcare Inventory &amp; Shipping System</h3>
+            <p>A multi-module Angular and .NET Core application on PostgreSQL. Real-time synchronisation across
+              distributed services, with logistics-provider integrations over REST.</p>
+            <ul class="pills">
+              <li>Angular</li>
+              <li>.NET Core</li>
+              <li>PostgreSQL</li>
+              <li>REST APIs</li>
+            </ul>
           </div>
-
-          <div class="project-card" data-category="web">
-            <div class="project-image">
-              <span class="project-badge">Web</span>
-              <div class="project-placeholder">
-                <i class="fas fa-truck"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Fleet Management System</h3>
-              <p>Extended a microservices-based platform to support new IoT device protocols and GPS telemetry ingestion. Built .NET Core APIs deployed on Kubernetes with Helm, optimised via CI/CD pipelines for zero-downtime rollouts.</p>
-              <div class="project-tech">
-                <span>.NET Core</span>
-                <span>Kubernetes</span>
-                <span>PostgreSQL</span>
-                <span>CI/CD</span>
-              </div>
-            </div>
+          <div class="art art-hatch" role="img" aria-label="Abstract motif representing the healthcare inventory system">
+            <span class="stack">ANGULAR · .NET · POSTGRES</span>
           </div>
+        </article>
 
-          <div class="project-card" data-category="web">
-            <div class="project-image">
-              <span class="project-badge">Web</span>
-              <div class="project-placeholder">
-                <i class="fas fa-diagram-project"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Workflow Automation Platform</h3>
-              <p>A full-stack workflow orchestration platform built with React and Java Spring Boot. Uses Flowable as the BPMN process engine, PostgreSQL for persistence, and Keycloak for OAuth2/OIDC identity and access management.</p>
-              <div class="project-tech">
-                <span>React</span>
-                <span>Java</span>
-                <span>Spring Boot</span>
-                <span>Flowable</span>
-                <span>PostgreSQL</span>
-                <span>Keycloak</span>
-              </div>
-            </div>
+        <article class="proj">
+          <div>
+            <p class="kicker"><b>02</b><span>Fleet / IoT</span></p>
+            <h3>Fleet Management Platform</h3>
+            <p>Extended a microservices platform to support new IoT device protocols and GPS telemetry ingestion. .NET
+              Core APIs on Kubernetes via Helm, tuned through CI/CD for zero-downtime rollouts.</p>
+            <ul class="pills">
+              <li>.NET Core</li>
+              <li>Kubernetes</li>
+              <li>Helm</li>
+              <li>CI/CD</li>
+            </ul>
           </div>
-
-          <!-- ML / AI -->
-          <div class="project-card" data-category="ml-ai">
-            <div class="project-image">
-              <span class="project-badge">ML / AI</span>
-              <div class="project-placeholder">
-                <i class="fas fa-brain"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Fraud Detection Model</h3>
-              <p>End-to-end ML pipeline built on AWS SageMaker for real-time anomaly scoring. Orchestrated inference via AWS Lambda and API Gateway; trained models on structured tabular data using scikit-learn and XGBoost.</p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>AWS SageMaker</span>
-                <span>Lambda</span>
-                <span>scikit-learn</span>
-                <span>XGBoost</span>
-              </div>
-            </div>
+          <div class="art art-grid" role="img" aria-label="Abstract motif representing the fleet telemetry platform">
+            <span class="stack">K8S · HELM · TELEMETRY</span>
           </div>
+        </article>
 
-          <div class="project-card" data-category="ml-ai">
-            <div class="project-image">
-              <span class="project-badge">ML / AI</span>
-              <div class="project-placeholder">
-                <i class="fas fa-mask"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Superhero Character Predictor</h3>
-              <p>A convolutional neural network trained to classify images into character identities. Built with Python and Keras using transfer learning on a custom-labelled dataset, with image augmentation applied for generalisation.</p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>Keras</span>
-                <span>CNN</span>
-                <span>Transfer Learning</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/HarigovindV10/SuperheroCharacterPredictor" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
-              </div>
-            </div>
+        <article class="proj">
+          <div>
+            <p class="kicker"><b>03</b><span>Platform</span></p>
+            <h3>Workflow Automation Platform</h3>
+            <p>Full-stack orchestration built on React and Java Spring Boot, with Flowable as the BPMN engine,
+              PostgreSQL for persistence and Keycloak for OAuth2/OIDC identity.</p>
+            <ul class="pills">
+              <li>React</li>
+              <li>Spring Boot</li>
+              <li>Flowable</li>
+              <li>Keycloak</li>
+            </ul>
           </div>
-
-          <div class="project-card" data-category="ml-ai">
-            <div class="project-image">
-              <span class="project-badge">ML / AI</span>
-              <div class="project-placeholder">
-                <i class="fas fa-credit-card"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Credit Card Fraud Detection</h3>
-              <p>A binary classification pipeline using scikit-learn to detect anomalous transactions in highly imbalanced tabular datasets. Applied SMOTE for class balancing and evaluated models using precision-recall AUC.</p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>scikit-learn</span>
-                <span>SMOTE</span>
-                <span>Jupyter</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/HarigovindV10/Credit-Card-Fraud-Detection" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
-              </div>
-            </div>
+          <div class="art art-flow" role="img" aria-label="Abstract motif representing the workflow automation platform">
+            <span class="stack">BPMN · SPRING · KEYCLOAK</span>
           </div>
-
-          <div class="project-card" data-category="ml-ai">
-            <div class="project-image">
-              <span class="project-badge">ML / AI</span>
-              <div class="project-placeholder">
-                <i class="fas fa-chart-line"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Linear Regression from Scratch</h3>
-              <p>A ground-up implementation of linear regression using NumPy — gradient descent, cost function minimisation, and model evaluation — without any ML framework abstractions.</p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>NumPy</span>
-                <span>Matplotlib</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/HarigovindV10/LinearRegression" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" data-category="ml-ai">
-            <div class="project-image">
-              <span class="project-badge">ML / AI</span>
-              <div class="project-placeholder">
-                <i class="fas fa-circle-nodes"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Clustering Algorithms</h3>
-              <p>Implementations of major unsupervised clustering algorithms — K-Means, DBSCAN, and Agglomerative — benchmarked across synthetic and real datasets with visualised cluster boundaries.</p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>scikit-learn</span>
-                <span>Matplotlib</span>
-                <span>Jupyter</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/HarigovindV10/Clustering" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" data-category="ml-ai">
-            <div class="project-image">
-              <span class="project-badge">ML / AI</span>
-              <div class="project-placeholder">
-                <i class="fas fa-sitemap"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Algorithms Library</h3>
-              <p>A reference collection of classic computer science algorithms implemented in Python — sorting, graph traversal, dynamic programming, and search — each with time and space complexity annotations.</p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>Data Structures</span>
-                <span>Algorithms</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/HarigovindV10/Algorithms" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Tools -->
-          <div class="project-card" data-category="tool">
-            <div class="project-image">
-              <span class="project-badge">Tool</span>
-              <div class="project-placeholder">
-                <i class="fas fa-wifi"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>JioFi Status Checker</h3>
-              <p>A native macOS menu bar application built in Swift that polls a local network device's status API, surfacing battery and signal metrics directly in the system tray without opening a browser.</p>
-              <div class="project-tech">
-                <span>Swift</span>
-                <span>macOS</span>
-                <span>URLSession</span>
-                <span>MenuBar</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/HarigovindV10/JioFiStatusChecker" class="btn-github" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> View on GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card" data-category="tool">
-            <div class="project-image">
-              <span class="project-badge">Tool</span>
-              <div class="project-placeholder">
-                <i class="fas fa-bookmark"></i>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Reddit Saved Items Organiser</h3>
-              <p>A Python CLI tool that authenticates with the Reddit OAuth2 API via PRAW to fetch, filter, and export a user's saved posts and comments into structured formats for offline archiving.</p>
-              <div class="project-tech">
-                <span>Python</span>
-                <span>PRAW</span>
-                <span>OAuth2</span>
-                <span>REST</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content">
-          <div class="contact-info">
-            <h3>Let's work together!</h3>
-            <p>I'm always interested in new opportunities and exciting projects. Feel free to reach out if you'd like to collaborate or just want to say hello.</p>
-            <div class="contact-methods">
-              <div class="contact-method">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:contact@harigovindvalsakumar.com" class="contact-link">contact@harigovindvalsakumar.com</a>
-              </div>
-            </div>
+    <!-- ── Also built ────────────────────────────────────────────── -->
+    <section class="sec will-rise" style="padding-top:60px">
+      <p class="tag">Also built</p>
+      <div>
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button type="button" class="is-on" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="ml" aria-pressed="false">ML / AI</button>
+          <button type="button" data-filter="tool" aria-pressed="false">Tools</button>
+        </div>
+
+        <div class="repos" data-repos>
+          <div class="repo" data-cat="ml">
+            <span class="cat">ML / AI</span>
+            <span class="name">Fraud Detection Model</span>
+            <span class="desc">End-to-end pipeline on AWS SageMaker for real-time anomaly scoring, served through Lambda
+              and API Gateway.</span>
+            <span class="go muted">Private</span>
           </div>
-          <div class="contact-form">
-            <form id="contactForm" novalidate>
-              <div class="form-group">
-                <input type="text" id="name" name="name" placeholder="Your Name" maxlength="100" required>
-                <small class="field-error" id="nameError">Please enter your name.</small>
-              </div>
-              <div class="form-group">
-                <input type="email" id="email" name="email" placeholder="Your Email" maxlength="254" required>
-                <small class="field-error" id="emailError">Please enter a valid email address.</small>
-              </div>
-              <div class="form-group">
-                <input type="text" id="subject" name="subject" placeholder="Subject" maxlength="200" required>
-                <small class="field-error" id="subjectError">Please enter a subject.</small>
-              </div>
-              <div class="form-group">
-                <textarea id="message" name="message" placeholder="Your Message" rows="5" maxlength="5000" required></textarea>
-                <small class="field-error" id="messageError">Please enter a message.</small>
-              </div>
-              <!-- Honeypot: hidden from people, catches bots. Real submissions leave it empty. -->
-              <input type="text" name="company" id="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
-              <button type="submit" class="btn btn-primary">Send Message</button>
-              <div id="formStatus" class="form-status" role="status" aria-live="polite"></div>
-            </form>
+
+          <a class="repo" data-cat="ml" href="https://github.com/HarigovindV10/SuperheroCharacterPredictor"
+            target="_blank" rel="noopener">
+            <span class="cat">ML / AI</span>
+            <span class="name">Superhero Character Predictor</span>
+            <span class="desc">A CNN trained with Keras transfer learning on a custom-labelled image set, with
+              augmentation for generalisation.</span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="repo" data-cat="ml" href="https://github.com/HarigovindV10/Credit-Card-Fraud-Detection"
+            target="_blank" rel="noopener">
+            <span class="cat">ML / AI</span>
+            <span class="name">Credit Card Fraud Detection</span>
+            <span class="desc">Binary classification on heavily imbalanced tabular data — SMOTE for balancing,
+              evaluated on precision-recall AUC.</span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="repo" data-cat="ml" href="https://github.com/HarigovindV10/LinearRegression" target="_blank"
+            rel="noopener">
+            <span class="cat">ML / AI</span>
+            <span class="name">Linear Regression from Scratch</span>
+            <span class="desc">Gradient descent, cost minimisation and evaluation written in NumPy, with no framework
+              abstractions in the way.</span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="repo" data-cat="ml" href="https://github.com/HarigovindV10/Clustering" target="_blank"
+            rel="noopener">
+            <span class="cat">ML / AI</span>
+            <span class="name">Clustering Algorithms</span>
+            <span class="desc">K-Means, DBSCAN and Agglomerative benchmarked across synthetic and real datasets with
+              visualised boundaries.</span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="repo" data-cat="ml" href="https://github.com/HarigovindV10/Algorithms" target="_blank"
+            rel="noopener">
+            <span class="cat">ML / AI</span>
+            <span class="name">Algorithms Library</span>
+            <span class="desc">Classic CS algorithms in Python — sorting, graph traversal, DP, search — each annotated
+              with its complexity.</span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+
+          <a class="repo" data-cat="tool" href="https://github.com/HarigovindV10/JioFiStatusChecker" target="_blank"
+            rel="noopener">
+            <span class="cat">Tool</span>
+            <span class="name">JioFi Status Checker</span>
+            <span class="desc">A native macOS menu-bar app in Swift that polls a router status API and surfaces battery
+              and signal in the tray.</span>
+            <span class="go" aria-hidden="true">↗</span>
+          </a>
+
+          <div class="repo" data-cat="tool">
+            <span class="cat">Tool</span>
+            <span class="name">Reddit Saved Items Organiser</span>
+            <span class="desc">A Python CLI that authenticates via PRAW, then fetches, filters and exports saved posts
+              for offline archiving.</span>
+            <span class="go muted">Private</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-                      <div class="footer-social">
-              <a href="https://github.com/harigovindv10" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-              <a href="https://linkedin.com/in/harigovindvalsakumar" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-              <a href="https://x.com/hvalsakumar" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
-              <a href="https://www.instagram.com/harigovindvalsakumar/" class="social-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-            </div>
-          <p>&copy; 2025 Harigovind Valsakumar. All rights reserved.</p>
+    <!-- ── Stack ─────────────────────────────────────────────────── -->
+    <section class="sec will-rise" id="skills">
+      <p class="tag">03 — Stack</p>
+      <div>
+        <h2 style="margin-bottom:40px">What I reach for.</h2>
+        <div class="tri">
+          <div class="card">
+            <h3>Front-end</h3>
+            <ul class="pills">
+              <li>Angular</li>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>HTML/CSS</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Back-end &amp; data</h3>
+            <ul class="pills">
+              <li>.NET Core</li>
+              <li>C#</li>
+              <li>Spring Boot</li>
+              <li>Python</li>
+              <li>PostgreSQL</li>
+              <li>SQL Server</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Cloud &amp; ML</h3>
+            <ul class="pills">
+              <li>AWS</li>
+              <li>Kubernetes</li>
+              <li>Docker</li>
+              <li>CI/CD</li>
+              <li>SageMaker</li>
+              <li>scikit-learn</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <!-- JavaScript -->
-    <script src="main.js?v=2"></script>
-  </body>
+    <!-- ── Contact ───────────────────────────────────────────────── -->
+    <section class="contact will-rise" id="contact">
+      <div>
+        <p class="tag">04 — Contact</p>
+        <h2>Let's build something <span class="it">dull and dependable.</span></h2>
+        <p class="blurb">Open to full-stack and platform roles. Also happy to talk shop about Kubernetes rollouts or
+          model deployment.</p>
+        <a class="mailto" href="mailto:contact@harigovindvalsakumar.com">contact@harigovindvalsakumar.com</a>
+        <div class="socials">
+          <a href="https://github.com/harigovindv10" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://linkedin.com/in/harigovindvalsakumar" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://x.com/hvalsakumar" target="_blank" rel="noopener">X</a>
+          <a href="https://www.instagram.com/harigovindvalsakumar/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" maxlength="100" required>
+            <small class="err" id="nameError">Please enter your name.</small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@company.com" maxlength="254" required>
+            <small class="err" id="emailError">Please enter a valid email address.</small>
+          </div>
+
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="What's this about?" maxlength="200" required>
+            <small class="err" id="subjectError">Please enter a subject.</small>
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" placeholder="What are you working on?" maxlength="5000"
+              required></textarea>
+            <small class="err" id="messageError">Please enter a message.</small>
+          </div>
+
+          <!-- Honeypot: hidden from people, catches bots. Real submissions leave it empty. -->
+          <input class="hp" type="text" name="company" id="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button type="submit" class="btn">Send message</button>
+          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="sent" id="formSent" hidden>
+          <div class="tick" aria-hidden="true">✓</div>
+          <h3>Message sent</h3>
+          <p>I'll get back to you within a day or two.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© <span data-year>2026</span> Harigovind Valsakumar</span>
+    <span>Kochi, India · Built with too much attention to the error path</span>
+  </footer>
+
+  <script src="main.js?v=3" defer></script>
+</body>
+
 </html>

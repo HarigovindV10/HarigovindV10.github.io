@@ -1,94 +1,170 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+/* Harigovind Valsakumar — portfolio behaviour.
+   Nav, scroll-spy, section reveals, project filtering, and the contact form
+   (POST /api/contact -> Cloudflare Pages Function -> Resend). */
+(function () {
+  'use strict';
 
-// Guard: if the nav markup is ever missing, don't let it throw and abort the
-// rest of this file (which would silently break the contact form).
-if (hamburger && navMenu) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-  });
+  document.documentElement.classList.remove('no-js');
 
-  // Close mobile menu when clicking on a link
-  document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-  }));
-}
+  var reduceMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+  /* ── Mobile nav ─────────────────────────────────────────────────── */
+  function nav() {
+    var btn = document.querySelector('[data-nav-toggle]');
+    var links = document.querySelector('[data-nav-links]');
+    if (!btn || !links) return;
+
+    btn.addEventListener('click', function () {
+      var open = links.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    links.addEventListener('click', function (e) {
+      if (e.target.tagName !== 'A') return;
+      links.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  /* ── Scroll-spy ─────────────────────────────────────────────────── */
+  function spy() {
+    var links = document.querySelectorAll('[data-nav]');
+    if (!links.length) return;
+    var ids = Array.prototype.map.call(links, function (a) { return a.getAttribute('data-nav'); });
+    var ticking = false;
+
+    function update() {
+      ticking = false;
+      var current = null;
+      ids.forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 150) current = id;
+      });
+      Array.prototype.forEach.call(links, function (a) {
+        a.classList.toggle('is-active', a.getAttribute('data-nav') === current);
       });
     }
-  });
-});
 
-// Contact form -> Cloudflare Pages Function (/api/contact) -> Resend.
-// Inline validation, no third-party JS. Reply-To is set to the visitor server-side.
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const fields = ['name', 'email', 'subject', 'message'];
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    }, { passive: true });
 
-  const setError = (id, msg) => {
-    const group = document.getElementById(id).closest('.form-group');
-    const err = document.getElementById(id + 'Error');
-    if (msg) {
-      if (err) err.textContent = msg;
-      group.classList.add('invalid');
-    } else {
-      group.classList.remove('invalid');
-    }
-  };
+    update();
+  }
 
-  const validateField = (id) => {
-    const value = document.getElementById(id).value.trim();
-    if (!value) { setError(id, 'This field is required.'); return false; }
-    if (id === 'email' && !EMAIL_RE.test(value)) {
-      setError(id, 'Please enter a valid email address.');
-      return false;
-    }
-    setError(id, null);
-    return true;
-  };
+  /* ── Section reveals ────────────────────────────────────────────── */
+  function reveals() {
+    var els = document.querySelectorAll('.will-rise');
+    if (!els.length) return;
 
-  // Live feedback as the user leaves or corrects a field.
-  fields.forEach((id) => {
-    const el = document.getElementById(id);
-    el.addEventListener('blur', () => validateField(id));
-    el.addEventListener('input', () => {
-      if (el.closest('.form-group').classList.contains('invalid')) validateField(id);
-    });
-  });
-
-  contactForm.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    const status = document.getElementById('formStatus');
-    status.className = 'form-status';
-    status.textContent = '';
-
-    const valid = fields.map(validateField).every(Boolean);
-    if (!valid) {
-      const firstInvalid = contactForm.querySelector('.form-group.invalid input, .form-group.invalid textarea');
-      if (firstInvalid) firstInvalid.focus();
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(els, function (el) { el.style.opacity = '1'; });
       return;
     }
 
-    const submitBtn = this.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending…';
-    submitBtn.disabled = true;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.06, rootMargin: '0px 0px -6% 0px' });
 
-    try {
-      const res = await fetch('/api/contact', {
+    Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+  }
+
+  /* ── Project filtering ──────────────────────────────────────────── */
+  function filters() {
+    var btns = document.querySelectorAll('[data-filter]');
+    var list = document.querySelector('[data-repos]');
+    if (!btns.length || !list) return;
+
+    var rows = list.querySelectorAll('[data-cat]');
+
+    Array.prototype.forEach.call(btns, function (btn) {
+      btn.addEventListener('click', function () {
+        var want = btn.getAttribute('data-filter');
+
+        Array.prototype.forEach.call(btns, function (b) {
+          var on = b === btn;
+          b.classList.toggle('is-on', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+
+        Array.prototype.forEach.call(rows, function (row) {
+          row.hidden = want !== 'all' && row.getAttribute('data-cat') !== want;
+        });
+      });
+    });
+  }
+
+  /* ── Contact form ───────────────────────────────────────────────── */
+  /* Posts JSON to the Pages Function at /api/contact, which validates again
+     server-side and sends through Resend. `subject` and the `company`
+     honeypot are both required by that endpoint — do not drop them. */
+  function contact() {
+    var form = document.getElementById('contactForm');
+    if (!form) return;
+
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var fields = ['name', 'email', 'subject', 'message'];
+    var status = document.getElementById('formStatus');
+    var sent = document.getElementById('formSent');
+
+    function setError(id, msg) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var group = el.closest('.field');
+      var err = document.getElementById(id + 'Error');
+      if (msg) {
+        if (err) err.textContent = msg;
+        group.classList.add('invalid');
+      } else {
+        group.classList.remove('invalid');
+      }
+    }
+
+    function validateField(id) {
+      var value = document.getElementById(id).value.trim();
+      if (!value) { setError(id, 'This field is required.'); return false; }
+      if (id === 'email' && !EMAIL_RE.test(value)) {
+        setError(id, 'Please enter a valid email address.');
+        return false;
+      }
+      setError(id, null);
+      return true;
+    }
+
+    // Live feedback as the visitor leaves or corrects a field.
+    fields.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('blur', function () { validateField(id); });
+      el.addEventListener('input', function () {
+        if (el.closest('.field').classList.contains('invalid')) validateField(id);
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.textContent = '';
+
+      var valid = fields.map(validateField).every(Boolean);
+      if (!valid) {
+        var firstInvalid = form.querySelector('.field.invalid input, .field.invalid textarea');
+        if (firstInvalid) firstInvalid.focus();
+        return;
+      }
+
+      var btn = form.querySelector('button[type="submit"]');
+      var label = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -96,148 +172,44 @@ if (contactForm) {
           email: document.getElementById('email').value.trim(),
           subject: document.getElementById('subject').value.trim(),
           message: document.getElementById('message').value.trim(),
-          company: document.getElementById('company').value, // honeypot
-        }),
-      });
-
-      if (res.ok) {
-        contactForm.reset();
-        status.className = 'form-status success';
-        status.textContent = "Thank you for your message! I'll get back to you soon.";
-      } else {
-        const data = await res.json().catch(() => ({}));
-        if (data.errors) {
-          Object.entries(data.errors).forEach(([id, msg]) => setError(id, msg));
+          company: document.getElementById('company').value // honeypot
+        })
+      }).then(function (res) {
+        if (res.ok) {
+          form.reset();
+          form.hidden = true;
+          if (sent) sent.hidden = false;
+          return;
         }
-        status.className = 'form-status error';
-        status.textContent = data.error || 'Sorry, something went wrong. Please try again or email contact@harigovindvalsakumar.com.';
-      }
-    } catch (err) {
-      status.className = 'form-status error';
-      status.textContent = 'Network error. Please try again or email contact@harigovindvalsakumar.com.';
-    } finally {
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }
-  });
-}
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          if (data.errors) {
+            Object.keys(data.errors).forEach(function (id) { setError(id, data.errors[id]); });
+          }
+          status.textContent = data.error ||
+            'Sorry, something went wrong. Please try again or email contact@harigovindvalsakumar.com.';
+        });
+      }).catch(function () {
+        status.textContent =
+          'Network error. Please try again or email contact@harigovindvalsakumar.com.';
+      }).then(function () {
+        btn.textContent = label;
+        btn.disabled = false;
+      });
+    });
+  }
 
-// Intersection Observer for animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
+  /* ── Copyright year ─────────────────────────────────────────────── */
+  function year() {
+    Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {
+      el.textContent = new Date().getFullYear();
+    });
+  }
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('fade-in-up');
-    }
-  });
-}, observerOptions);
+  function init() { nav(); spy(); reveals(); filters(); contact(); year(); }
 
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-  const animateElements = document.querySelectorAll('.skill-category, .project-card, .stat');
-  animateElements.forEach(el => observer.observe(el));
-});
-
-// Navbar background change on scroll
-window.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  if (window.scrollY > 100) {
-    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-    navbar.style.boxShadow = '0 2px 30px rgba(0, 0, 0, 0.15)';
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    init();
   }
-});
-
-// Typing effect for hero title (optional enhancement)
-function typeWriter(element, text, speed = 100) {
-  let i = 0;
-  element.innerHTML = '';
-  
-  function type() {
-    if (i < text.length) {
-      element.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
-    }
-  }
-  
-  type();
-}
-
-// Initialize typing effect when page loads
-document.addEventListener('DOMContentLoaded', () => {
-  const heroTitle = document.querySelector('.hero-title');
-  if (heroTitle) {
-    const originalText = heroTitle.innerHTML;
-    // Uncomment the line below to enable typing effect
-    // typeWriter(heroTitle, originalText, 50);
-  }
-});
-
-// Project card hover effects
-document.querySelectorAll('.project-card').forEach(card => {
-  card.addEventListener('mouseenter', function() {
-    this.style.transform = 'translateY(-10px) scale(1.02)';
-  });
-  
-  card.addEventListener('mouseleave', function() {
-    this.style.transform = 'translateY(0) scale(1)';
-  });
-});
-
-// Skill item hover effects
-document.querySelectorAll('.skill-item').forEach(item => {
-  item.addEventListener('mouseenter', function() {
-    this.style.transform = 'translateX(10px)';
-  });
-  
-  item.addEventListener('mouseleave', function() {
-    this.style.transform = 'translateX(0)';
-  });
-});
-
-// Smooth reveal animation for sections
-function revealOnScroll() {
-  const sections = document.querySelectorAll('section');
-  
-  sections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-    
-    if (sectionTop < windowHeight * 0.75) {
-      section.style.opacity = '1';
-      section.style.transform = 'translateY(0)';
-    }
-  });
-}
-
-// Initialize section animations
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('section');
-  sections.forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  });
-  
-  // Trigger initial reveal
-  revealOnScroll();
-  
-  // Listen for scroll events
-  window.addEventListener('scroll', revealOnScroll);
-});
-
-// Add loading animation
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-});
-
-// Console welcome message
-console.log('%c👋 Welcome to my portfolio!', 'color: #2563eb; font-size: 20px; font-weight: bold;');
-console.log('%cFeel free to explore the code and reach out if you have any questions!', 'color: #6b7280; font-size: 14px;');
+})();
