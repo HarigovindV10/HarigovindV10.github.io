@@ -15,6 +15,21 @@ const TEMPLATE_ID = "contact-form-submission";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/**
+ * The Resend template drops the message into an HTML paragraph via a raw
+ * {{{form_message}}}, so newlines collapse and any markup a sender types would
+ * land in the inbox as live HTML. Escape it, then turn the line breaks back
+ * into <br> so the message arrives shaped the way it was written.
+ */
+function messageToHtml(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\r\n?/g, "\n")
+    .replace(/\n/g, "<br>");
+}
+
 function json(body, status = 200) {
   return new Response(JSON.stringify(body), {
     status,
@@ -72,7 +87,7 @@ export async function onRequestPost(context) {
           sender_name: name,
           sender_email: email,
           form_subject: subject,
-          form_message: message,
+          form_message: messageToHtml(message),
           reply_to_email: email,
         },
       },

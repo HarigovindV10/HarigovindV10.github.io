@@ -113,6 +113,7 @@
     var fields = ['name', 'email', 'subject', 'message'];
     var status = document.getElementById('formStatus');
     var sent = document.getElementById('formSent');
+    var resetTimer = null;
 
     function setError(id, msg) {
       var el = document.getElementById(id);
@@ -177,8 +178,16 @@
       }).then(function (res) {
         if (res.ok) {
           form.reset();
+          fields.forEach(function (id) { setError(id, null); });
           form.style.display = 'none';
           if (sent) sent.style.display = 'flex';
+          // Put the form back after a beat so a second message needs no reload.
+          clearTimeout(resetTimer);
+          resetTimer = setTimeout(function () {
+            if (sent) sent.style.display = 'none';
+            form.style.display = '';
+            status.textContent = '';
+          }, 5000);
           return;
         }
         return res.json().catch(function () { return {}; }).then(function (data) {
