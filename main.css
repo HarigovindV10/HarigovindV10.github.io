@@ -612,6 +612,47 @@ h4 {
 	color: var(--ink-3);
 }
 
+.proj-app {
+	grid-template-columns: minmax(0, 1fr);
+}
+
+.proj-app .pills {
+	margin-bottom: 20px;
+}
+
+.app-links {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.app-links a {
+	padding: 10px 20px;
+	border-radius: 999px;
+	border: 1px solid rgba(240, 236, 227, .2);
+	color: var(--ink);
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.app-links a:hover {
+	background: rgba(240, 236, 227, .09);
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.app-links a.is-primary {
+	background: var(--lime);
+	border-color: var(--lime);
+	color: var(--bg);
+}
+
+.app-links a.is-primary:hover {
+	background: var(--lime-hi);
+	border-color: var(--lime-hi);
+	color: var(--bg);
+}
+
 /* Generated project art. These are NDA'd client systems with no shippable
    screenshots, so the panel is a motif in the site's own language rather
    than stock photography — pure CSS, no external requests. */

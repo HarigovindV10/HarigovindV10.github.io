@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap">
-  <link rel="stylesheet" href="main.css?v=5">
+  <link rel="stylesheet" href="main.css?v=6">
 </head>
 
 <body>
@@ -52,6 +52,7 @@
       <div class="nav-links" id="nav-links" data-nav-links>
         <a data-nav="about" href="#about">About</a>
         <a data-nav="work" href="#work">Work</a>
+        <a data-nav="apps" href="#apps">Apps</a>
         <a data-nav="skills" href="#skills">Stack</a>
         <a class="nav-cta" href="#contact">Get in touch</a>
       </div>
@@ -119,7 +120,7 @@
             clients — the kind of work where a bad migration is somebody's missing inventory at 2am.</p>
           <p>Most of that has gone into microservices, third-party integrations and the CI/CD that makes releases
             boring. I care about the parts nobody demos: query plans, rollout strategy, the error path. Outside work I
-            train models and build small tools.</p>
+            ship apps — inventory on the App Store, a podcast player on TestFlight, a media client in progress.</p>
         </div>
 
         <div class="timeline">
@@ -127,24 +128,23 @@
             <div class="when">2023 — Now</div>
             <div>
               <h3>Platform, workflow &amp; ML</h3>
-              <p>BPMN workflow orchestration on Spring Boot and Flowable, Keycloak identity, and SageMaker-served
-                anomaly models.</p>
+              <p>BPMN workflow orchestration on Spring Boot and Flowable, with Keycloak for identity.</p>
             </div>
           </div>
           <div class="row">
             <div class="when">2021 — 2023</div>
             <div>
-              <h3>Fleet management &amp; IoT</h3>
-              <p>Extended a microservice platform to new device protocols and GPS telemetry ingestion; Helm-deployed
-                .NET Core APIs with zero-downtime rollouts.</p>
+              <h3>Healthcare &amp; shipping systems</h3>
+              <p>Angular and .NET Core inventory and logistics modules on PostgreSQL, synchronising data across
+                distributed services and carrier APIs.</p>
             </div>
           </div>
           <div class="row">
             <div class="when">2019 — 2021</div>
             <div>
-              <h3>Healthcare &amp; shipping systems</h3>
-              <p>Angular and .NET Core inventory and logistics modules on PostgreSQL, synchronising data across
-                distributed services and carrier APIs.</p>
+              <h3>Fleet management &amp; IoT</h3>
+              <p>Extended a microservice platform to new device protocols and GPS telemetry ingestion; Helm-deployed
+                .NET Core APIs with zero-downtime rollouts.</p>
             </div>
           </div>
         </div>
@@ -209,6 +209,71 @@
           </div>
           <div class="art art-flow" role="img" aria-label="Abstract motif representing the workflow automation platform">
             <span class="stack">BPMN · SPRING · KEYCLOAK</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── Apps ───────────────────────────────────────────────────── -->
+    <section class="sec will-rise" id="apps" style="padding-top:60px;padding-bottom:60px">
+      <p class="tag">Apps</p>
+      <div>
+        <h2 class="tight">Three of my own.</h2>
+        <p class="work-note">Personal products, not client work. One is on the store, one is on TestFlight, one is
+          still cooking.</p>
+
+        <article class="proj proj-app">
+          <div>
+            <p class="kicker"><b>01</b><span>App Store</span></p>
+            <h3>Inventory QR</h3>
+            <p>QR codes on boxes, shelves and drawers. Homes, rooms, locations, items — kept in your own iCloud,
+              findable in one tap. iPhone, iPad and Apple Watch.</p>
+            <ul class="pills">
+              <li>SwiftUI</li>
+              <li>CloudKit</li>
+              <li>watchOS</li>
+            </ul>
+            <div class="app-links">
+              <a class="is-primary" href="https://apps.apple.com/app/id6747960199" target="_blank"
+                rel="noopener">App Store</a>
+              <a href="https://inventoryqrapp.com/" target="_blank" rel="noopener">Website</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj proj-app">
+          <div>
+            <p class="kicker"><b>02</b><span>TestFlight</span></p>
+            <h3>Kiln</h3>
+            <p>A podcast player that writes transcripts on the iPhone. Search what was actually said, not just the
+              episode title. No account, no key, no charge for the transcript.</p>
+            <ul class="pills">
+              <li>SwiftUI</li>
+              <li>On-device speech</li>
+              <li>CloudKit</li>
+            </ul>
+            <div class="app-links">
+              <a class="is-primary" href="https://testflight.apple.com/join/neDPMNEW" target="_blank"
+                rel="noopener">TestFlight</a>
+              <a href="https://kilnpodcastplayer.app/" target="_blank" rel="noopener">Website</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="proj proj-app">
+          <div>
+            <p class="kicker"><b>03</b><span>In development</span></p>
+            <h3>Beam</h3>
+            <p>A native Plex client for Apple TV, iPhone, iPad and Mac, with the *arr stack in the same interface you
+              browse in.</p>
+            <ul class="pills">
+              <li>SwiftUI</li>
+              <li>tvOS</li>
+              <li>Plex</li>
+            </ul>
+            <div class="app-links">
+              <a href="https://beammediaplayer.com/" target="_blank" rel="noopener">Website</a>
+            </div>
           </div>
         </article>
       </div>
@@ -293,6 +358,7 @@
             <ul class="pills">
               <li>Angular</li>
               <li>React</li>
+              <li>SwiftUI</li>
               <li>TypeScript</li>
               <li>HTML/CSS</li>
             </ul>
@@ -315,7 +381,6 @@
               <li>Kubernetes</li>
               <li>Docker</li>
               <li>CI/CD</li>
-              <li>SageMaker</li>
               <li>scikit-learn</li>
             </ul>
           </div>
@@ -389,7 +454,7 @@
     <span>Kochi, India · Built with too much attention to the error path</span>
   </footer>
 
-  <script src="main.js?v=5" defer></script>
+  <script src="main.js?v=6" defer></script>
 </body>
 
 </html>
