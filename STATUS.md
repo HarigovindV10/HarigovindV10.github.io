@@ -20,8 +20,8 @@ you first, then apps, then other work, plus a printable résumé.
 - SageMaker removed from current work
 - **Page order (27 Aug):** identity (name, portrait, timeline) → apps → other work and older experiments.
 - **Copy (27 Aug):** less résumé-speak. Bio mentions the home server. Layout and tone still not seen in a browser.
-- **Résumé (27 Aug):** phone, email, website only. Workflow product is its own 2023 job, not
-  under Gadgeon. PDF in Downloads.
+- **Résumé (27 Aug):** email and website only on the public page. Workflow product is its own
+  2023 job, not under Gadgeon.
 - **Also built (27 Aug):** Dispatch and Diffuse (GitHub still private), then News Originality,
   Superhero, Fraud Detection, Generate TV Scripts, Fractal.
 

@@ -27,7 +27,7 @@ demos", no three punchy fragment headings in a row. Say what the work was, then 
 
 `resume.html` is the printable résumé. It tracks the same facts as the page, plus education
 (B.Tech CSE, FISAT Angamaly, May 2019, GPA 7.88) and the Feathersoft intern (June–July 2018).
-Contact on the résumé is phone, `contact@harigovindvalsakumar.com`, and the site — no GitHub or
+Contact on the résumé is `contact@harigovindvalsakumar.com` and the site — no phone, GitHub or
 LinkedIn. Old Gmail stays off. The 2023—Now workflow product is not Gadgeon.
 **SageMaker is not current work.**
 
