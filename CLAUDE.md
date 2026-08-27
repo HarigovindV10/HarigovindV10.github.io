@@ -14,13 +14,22 @@ It is meant for employers and anyone landing from the App Store / GitHub / Linke
 and public from the start: nothing private belongs in the markup.
 
 The contact form posts to a Cloudflare Pages Function (`functions/api/contact.js`) which sends
-through Resend. Everything else is `index.html`, `main.css`, `main.js`.
+through Resend. Everything else is `index.html`, `main.css`, `main.js`, and `resume.html`.
 
 ## Audience
 
 Public. Copy is for a hiring reader, not for the author. Client work stays generalised where
 the contract requires it. Personal apps can be named, linked, and described as they actually
 ship.
+
+Write like a person. No résumé-stack sentences, no "unglamorous middle", no "parts nobody
+demos", no three punchy fragment headings in a row. Say what the work was, then the tools.
+
+`resume.html` is the printable résumé. It tracks the same facts as the page, plus education
+(B.Tech CSE, FISAT Angamaly, May 2019, GPA 7.88) and the Feathersoft intern (June–July 2018).
+Contact on the résumé is phone, `contact@harigovindvalsakumar.com`, and the site — no GitHub or
+LinkedIn. Old Gmail stays off. The 2023—Now workflow product is not Gadgeon.
+**SageMaker is not current work.**
 
 ## No framework, and don't add one
 
@@ -33,12 +42,13 @@ The About timeline is newest-first. The years attached to each job are:
 
 | When | What |
 | --- | --- |
-| 2023 — Now | Platform, workflow & ML |
-| 2021 — 2023 | Healthcare & shipping systems |
-| 2019 — 2021 | Fleet management & IoT |
+| 2023 — Now | Workflow platform — **not Gadgeon** (React, Spring Boot, Flowable, Keycloak) |
+| 2021 — 2023 | Gadgeon · Healthcare & shipping systems |
+| 2019 — 2021 | Gadgeon · Fleet management & IoT |
 
-Do not swap those two older rows back. **Current work does not include SageMaker.** Don't put
-it back in the latest entry or in the stack pills.
+Do not put the workflow product under Gadgeon. Do not swap those two older rows back.
+**Current Gadgeon work does not include SageMaker.** Don't put it in the latest Gadgeon
+entry or in the stack pills.
 
 ## Apps on this page, and where their URLs live
 
@@ -56,6 +66,10 @@ token. Don't substitute an invite from an Apple email.
 
 Beam is listed more quietly on purpose: in development, site only.
 
+The page order is **you, then the apps, then everything else.** Name, portrait, bio and
+timeline at the top. Apps next, with the icon dock. Other work and older experiments after
+that. Don't put the apps above the identity block again.
+
 ## Deploying
 
 Cloudflare Pages, project wired to this repo. `deploy.sh` is the local path if Git integration
@@ -64,5 +78,10 @@ secret after a deploy does not rebind it — redeploy.
 
 ## Visual language
 
-Instrument Serif + Space Grotesk on near-black, lime `#b6e04c`. Motifs in Selected work are CSS,
-not screenshots — those client systems are under NDA. Don't replace them with stock photos.
+This is a **product gallery**, not a dark résumé. Cool aluminum ground `#e7ebf2`, ink `#16181e`,
+cobalt `#2155ff`. Display face is Bricolage Grotesque; body is IBM Plex Sans. The signature is the iOS dock of the three real app icons in the Apps section — those files
+live in `icons/` and come from each app's App Store asset, not a redraw.
+
+**Do not go back to near-black plus lime.** That was the previous look, and it was rejected.
+
+Client systems stay as text. They are under NDA; don't invent screenshots.

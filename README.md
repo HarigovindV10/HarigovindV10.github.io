@@ -8,7 +8,7 @@
 [![Cloudflare](https://img.shields.io/badge/Cloudflare_Pages-live-f38020?style=flat-square&logo=cloudflare)](https://harigovindvalsakumar.com)
 [![Dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen?style=flat-square)](#-tech-stack)
 
-*One page: client work at Gadgeon, three apps, and a contact form that actually sends.*
+*One page: you first, then the apps, then other work, and a contact form that sends.*
 
 </div>
 
@@ -20,9 +20,10 @@ A static portfolio for employers and anyone arriving from GitHub, LinkedIn or an
 
 ### Highlights
 
-- 👤 **About** — newest-first timeline of the Gadgeon years
-- 🗂 **Selected work** — three client platforms, details generalised where the contract requires it
-- 📱 **Apps** — Inventory QR (App Store), Kiln (TestFlight), Beam (site)
+- 👤 **You first** — name, portrait, timeline
+- 📱 **Apps** — Inventory QR (App Store), Kiln (TestFlight), Beam (site), with the real icons
+- 🗂 **Other work** — three platforms, details generalised where the contract requires it
+- 📄 **Résumé** — printable page at `resume.html`
 - 📬 **Contact** — Posts to a Cloudflare Pages Function, which sends through Resend
 
 ---
@@ -32,7 +33,7 @@ A static portfolio for employers and anyone arriving from GitHub, LinkedIn or an
 | Layer | Technology |
 | --- | --- |
 | Markup | Hand-written HTML, CSS and JavaScript. No bundler, no `package.json` |
-| Type | Instrument Serif + Space Grotesk, via Google Fonts |
+| Type | Bricolage Grotesque (display) + IBM Plex Sans, via Google Fonts |
 | Hosting | Cloudflare Pages, custom domain `harigovindvalsakumar.com` |
 | Contact | Pages Function at `POST /api/contact` → Resend |
 | Dependencies | None in-repo |
@@ -71,9 +72,11 @@ Bump the `?v=` query on `main.css` and `main.js` in `index.html` when those file
 
 ```
 index.html                 The page
-main.css                   Visual language — near-black, lime #b6e04c
+resume.html                Printable résumé
+main.css                   Visual language — aluminum, cobalt, the icon dock
 main.js                    Nav, scroll-spy, repo filters, contact POST
-portrait.webp              Hero photo
+icons/                     Real App Store icons for Inventory QR, Kiln, Beam
+portrait.webp              About photo
 functions/api/contact.js   Pages Function → Resend
 CLAUDE.md / AGENTS.md      Constraints (identical files)
 STATUS.md                  What's live vs pending

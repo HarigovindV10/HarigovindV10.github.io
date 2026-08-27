@@ -7,12 +7,8 @@ disagree with the deployed page, the page wins and this gets corrected.
 
 ## Where it stands
 
-**The portfolio is live at harigovindvalsakumar.com.** Static HTML/CSS/JS on Cloudflare Pages,
-with a working contact form through a Pages Function and Resend.
-
-The About timeline, stack, and Apps section match the 27 Aug 2026 copy pass: healthcare and
-fleet years are in the right slots, SageMaker is out of current work, and the three personal
-apps are on the page with live links.
+**The portfolio is live at harigovindvalsakumar.com.** This pass is the light product gallery:
+you first, then apps, then other work, plus a printable résumé.
 
 ---
 
@@ -20,16 +16,20 @@ apps are on the page with live links.
 
 - Hero, about, selected client work, GitHub "Also built" list, stack, contact form
 - Portrait, custom domain, contact Function
-- **Apps section** — Inventory QR (App Store + site), Kiln (TestFlight + site), Beam (site)
-- Timeline: 2023–Now platform/workflow; 2021–2023 healthcare; 2019–2021 fleet
-- SageMaker removed from the latest job and from the stack pills
-- Nav includes Apps; SwiftUI added to Front-end
+- Timeline: 2023–Now workflow (not Gadgeon); 2021–2023 healthcare; 2019–2021 fleet
+- SageMaker removed from current work
+- **Page order (27 Aug):** identity (name, portrait, timeline) → apps → other work and older experiments.
+- **Copy (27 Aug):** less résumé-speak. Bio mentions the home server. Layout and tone still not seen in a browser.
+- **Résumé (27 Aug):** phone, email, website only. Workflow product is its own 2023 job, not
+  under Gadgeon. PDF in Downloads.
+- **Also built (27 Aug):** Dispatch and Diffuse (GitHub still private), then News Originality,
+  Superhero, Fraud Detection, Generate TV Scripts, Fractal.
 
 ---
 
 ## In progress
 
-Nothing in this repo.
+- Nothing in this repo.
 
 ---
 
@@ -42,13 +42,13 @@ Nothing in this repo.
 
 ## Known issues & debt
 
-- Client project art is CSS motifs because those systems can't be screenshotted for a public
-  page. Fine until a contract allows otherwise.
-- `.DS_Store` was tracked; `.gitignore` now excludes it and `.wrangler/`. Stop tracking it on the next commit.
+- Client work is text only (NDA). No screenshots.
+- Layout, wording and tone of the new design have not been seen in a browser.
+- Adjacent “Other work” / “Also built” sections no longer stack 80px+80px of padding.
 
 ---
 
 ## Last verified
 
-**27 August 2026.** Markup and CSS for the Apps section, timeline years, and SageMaker
-removal. README rewritten to match the live site. Not opened in a browser.
+**27 August 2026.** Markup and CSS rewritten; icons copied from the three app repos. Not
+opened in a browser. Contact form IDs and the `/api/contact` POST are unchanged.
