@@ -14,6 +14,11 @@ you first, then apps, then other work, plus a printable résumé.
 
 ## Done
 
+- **2026-10-27 — Atlas on the page, and a way to the apps hub.** Atlas (Mac) joins the dock and the
+  Apps section with a direct Download (the always-latest notarized disk image) and its page on
+  apps.harigovindvalsakumar.com. The Apps heading gains "All apps →" to apps.harigovindvalsakumar.com;
+  there was no link from here before. `main.css` cache tag bumped to `?v=11`. Not yet deployed.
+
 - Hero, about, selected client work, GitHub "Also built" list, stack, contact form
 - Portrait, custom domain, contact Function
 - Timeline: 2023–Now workflow (not Gadgeon); 2021–2023 healthcare; 2019–2021 fleet

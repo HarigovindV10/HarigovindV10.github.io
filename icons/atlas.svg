@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="100 100 824 824">
+  <!-- Atlas app icon, design 2b "Meridian, tilted", from the Atlas repo's Docs/Brand/atlas-icon.svg,
+       with the viewBox cropped to the tile (the macOS icon grid's transparent margin left off). -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="#1D2027"/>
+  <rect x="102.5" y="102.5" width="819" height="819" rx="182.5" fill="none" stroke="#ECEEF2" stroke-opacity="0.12" stroke-width="5"/>
+  <g transform="translate(256.5 256.5) scale(5.11)">
+    <circle cx="50" cy="50" r="36" fill="none" stroke="#ECEEF2" stroke-width="7"/>
+    <g transform="rotate(-23 50 50)">
+      <ellipse cx="50" cy="50" rx="16" ry="36" fill="none" stroke="#ECEEF2" stroke-width="7" opacity="0.5"/>
+      <ellipse cx="50" cy="50" rx="36" ry="11" fill="none" stroke="#ECEEF2" stroke-width="7" opacity="0.5"/>
+      <circle cx="65.4" cy="59.9" r="9" fill="#6C8CFF"/>
+    </g>
+  </g>
+</svg>

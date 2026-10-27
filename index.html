@@ -28,7 +28,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
-  <link rel="stylesheet" href="main.css?v=10">
+  <link rel="stylesheet" href="main.css?v=11">
 </head>
 
 <body>
@@ -113,15 +113,22 @@
     <!-- ── Apps ───────────────────────────────────────────────────── -->
     <section class="band" id="apps">
       <div class="wrap">
-        <header class="sec-head">
-          <p class="eyebrow">Apps</p>
-          <h2>I built these.</h2>
+        <header class="sec-head sec-head-link">
+          <div>
+            <p class="eyebrow">Apps</p>
+            <h2>I built these.</h2>
+          </div>
+          <a class="sec-link" href="https://apps.harigovindvalsakumar.com/">All apps →</a>
         </header>
 
         <div class="dock" aria-label="Apps">
           <a class="dock-app" href="#inventory-qr">
             <img src="icons/inventory-qr.png" width="512" height="512" alt="">
             <span>Inventory QR</span>
+          </a>
+          <a class="dock-app" href="#atlas">
+            <img src="icons/atlas.svg" width="512" height="512" alt="">
+            <span>Atlas</span>
           </a>
           <a class="dock-app" href="#kiln">
             <img src="icons/kiln.png" width="512" height="512" alt="">
@@ -144,6 +151,21 @@
             <div class="app-links">
               <a class="btn" href="https://apps.apple.com/app/id6747960199" target="_blank" rel="noopener">App Store</a>
               <a class="btn btn-ghost" href="https://inventoryqrapp.com/" target="_blank" rel="noopener">Website</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product" id="atlas">
+          <img class="product-icon" src="icons/atlas.svg" width="512" height="512" alt="Atlas icon">
+          <div>
+            <p class="status-pill">Download for Mac</p>
+            <h3>Atlas</h3>
+            <p>A Finder alternative for the Mac. It finds files by name, by what a photo shows and by the words
+              inside documents, and does all of that indexing on the Mac itself. It updates itself.</p>
+            <p class="stack-line">SwiftUI · SQLite FTS5 · Vision · Sparkle</p>
+            <div class="app-links">
+              <a class="btn" href="https://downloads.harigovindvalsakumar.com/atlas/Atlas.dmg">Download</a>
+              <a class="btn btn-ghost" href="https://apps.harigovindvalsakumar.com/atlas/" target="_blank" rel="noopener">Website</a>
             </div>
           </div>
         </article>

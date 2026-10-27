@@ -60,6 +60,10 @@ ones, not guessed:
 | Inventory QR | https://inventoryqrapp.com/ | App Store `id6747960199` |
 | Kiln | https://kilnpodcastplayer.app/ | TestFlight `https://testflight.apple.com/join/neDPMNEW` |
 | Beam | https://beammediaplayer.com/ | Website only — not on a store yet |
+| Atlas (Mac) | https://apps.harigovindvalsakumar.com/atlas/ | Direct download `https://downloads.harigovindvalsakumar.com/atlas/Atlas.dmg` (always the latest; notarized, self-updating) |
+
+The Apps heading links to **https://apps.harigovindvalsakumar.com/**, the hub for all the apps;
+this page had no way there before (2026-10-27). Keep that link.
 
 Kiln's TestFlight URL is the **External** group's public link, not a personal `/v1/invite/…`
 token. Don't substitute an invite from an Apple email.
@@ -79,8 +83,10 @@ secret after a deploy does not rebind it — redeploy.
 ## Visual language
 
 This is a **product gallery**, not a dark résumé. Cool aluminum ground `#e7ebf2`, ink `#16181e`,
-cobalt `#2155ff`. Display face is Bricolage Grotesque; body is IBM Plex Sans. The signature is the iOS dock of the three real app icons in the Apps section — those files
-live in `icons/` and come from each app's App Store asset, not a redraw.
+cobalt `#2155ff`. Display face is Bricolage Grotesque; body is IBM Plex Sans. The signature is the iOS dock of the real app icons in the Apps section — those files
+live in `icons/` and come from each app's App Store asset, not a redraw. Atlas isn't on a store:
+`icons/atlas.svg` is its icon's own source (the Atlas repo's `Docs/Brand/atlas-icon.svg`, cropped to
+the tile), the same file the apps site uses.
 
 **Do not go back to near-black plus lime.** That was the previous look, and it was rejected.
 

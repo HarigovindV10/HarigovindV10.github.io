@@ -21,7 +21,7 @@ A static portfolio for employers and anyone arriving from GitHub, LinkedIn or an
 ### Highlights
 
 - 👤 **You first** — name, portrait, timeline
-- 📱 **Apps** — Inventory QR (App Store), Kiln (TestFlight), Beam (site), with the real icons
+- 📱 **Apps** — Inventory QR (App Store), Atlas (Mac download), Kiln (TestFlight), Beam (site), with the real icons, and a link to every app at apps.harigovindvalsakumar.com
 - 🗂 **Other work** — three platforms, details generalised where the contract requires it
 - 📄 **Résumé** — printable page at `resume.html`
 - 📬 **Contact** — Posts to a Cloudflare Pages Function, which sends through Resend
@@ -75,7 +75,7 @@ index.html                 The page
 resume.html                Printable résumé
 main.css                   Visual language — aluminum, cobalt, the icon dock
 main.js                    Nav, scroll-spy, repo filters, contact POST
-icons/                     Real App Store icons for Inventory QR, Kiln, Beam
+icons/                     Real App Store icons for Inventory QR, Kiln, Beam; Atlas's icon source
 portrait.webp              About photo
 functions/api/contact.js   Pages Function → Resend
 CLAUDE.md / AGENTS.md      Constraints (identical files)
